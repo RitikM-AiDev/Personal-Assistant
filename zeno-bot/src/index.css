@@ -1,0 +1,209 @@
+/* Container */
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0f172a; /* dark background */
+  position: relative;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* 🔺 Triangle */
+.triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 80px solid transparent;
+  border-right: 80px solid transparent;
+  border-bottom: 140px solid #22c55e;
+  top: 10%;
+  left: 10%;
+}
+
+/* 🔵 Circle */
+.circle {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: #3b82f6;
+  border-radius: 50%;
+  bottom: 10%;
+  right: 10%;
+}
+
+/* ◼️ Square */
+.square {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: #f43f5e;
+  top: 60%;
+  left: 20%;
+}
+
+/* 🔷 Diamond */
+.diamond {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: #eab308;
+  transform: rotate(45deg);
+  top: 20%;
+  right: 25%;
+}
+
+/* ⭐ Star (simple) */
+.star {
+  position: absolute;
+  width: 0;
+  height: 0;
+  color: #a855f7;
+  top: 70%;
+  right: 30%;
+}
+
+.star::before {
+  content: \"\";
+  position: absolute;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 70px solid #a855f7;
+  top: 0;
+}
+
+.star::after {
+  content: \"\";
+  position: absolute;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 70px solid #a855f7;
+  top: 20px;
+}
+
+/* Card */
+.card {
+  position: relative;
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  color: white;
+}
+
+.question {
+  display: grid;
+  grid-template-columns: 180px 1fr; /* 🔥 fixed alignment */
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+/* 📱 Mobile Responsive */
+@media (max-width: 600px) {
+  
+  .card {
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  /* Stack label + input vertically */
+  .question {
+    grid-template-columns: 1fr; /* 🔥 stack */
+    gap: 5px;
+    margin-bottom: 12px;
+    text-align: left;
+  }
+
+  .question label {
+    font-size: 14px;
+  }
+
+  .time-input {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .card button {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  /* Reduce shapes size (so they don’t cover UI) */
+  .triangle {
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 90px solid #22c55e;
+  }
+
+  .circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .square {
+    width: 80px;
+    height: 80px;
+  }
+
+  .diamond {
+    width: 70px;
+    height: 70px;
+  }
+
+  /* Optional: hide star if too crowded */
+  .star {
+    display: none;
+  }
+}
+.question label {
+  color: white;
+  font-weight: 500;
+}
+.tab{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.time-input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: #0f172a;
+  color: white;
+}
+/* Button */
+.card button {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: #22c55e;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+.time-input {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: #0f172a;
+  color: white;
+  font-size: 16px;
+}
+
+/* Optional: make icon visible */
+.time-input::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
